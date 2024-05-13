@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "C-Dash",
+  "version": "1.0.0",
+  "description": "Completely turns your default new tab page into a customizable dashboard",
+  "author": "4c65736975",
+  "icons": {
+    "16": "/icons/c-dash_icon_16.png",
+    "32": "/icons/c-dash_icon_32.png",
+    "48": "/icons/c-dash_icon_48.png",
+    "128": "/icons/c-dash_icon_128.png"
+  },
+  "permissions": ["scripting", "activeTab"],
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  },
+  "action": {
+  },
+  "homepage_url": "https://github.com/4c65736975/c-dash"
+}
