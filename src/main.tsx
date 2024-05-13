@@ -1,5 +1,5 @@
 /**
- * App.tsx
+ * main.tsx
  *
  * Copyright (c) 2024 Damian Leśniewski. All Rights Reserved.
  *
