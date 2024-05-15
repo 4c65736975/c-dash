@@ -123,20 +123,9 @@ const SettingsItem: React.FC<ISettingsItemProps> = ({ children }) => {
   );
 };
 
-export type SettingsPanelHandle = {
-  open: () => void;
-};
-
-const SettingsPanel = React.forwardRef<SettingsPanelHandle>((_, ref) => {
+const SettingsPanel = () => {
   const styles = useStyles();
-  const [isOpen, setIsOpen] = React.useState(false);
-  const { settings, updateSetting } = useSettings();
-
-  React.useImperativeHandle(ref, () => ({
-    open() {
-      setIsOpen(true);
-    }
-  }));
+  const { settings, updateSetting, isSettingsOpen, setIsSettingsOpen } = useSettings();
 
   const themeId = useId(settings.theme.id);
   const tempId = useId(settings.tempUnit.id);
@@ -149,11 +138,11 @@ const SettingsPanel = React.forwardRef<SettingsPanelHandle>((_, ref) => {
 
   return (
     <OverlayDrawer
-      open={isOpen}
+      open={isSettingsOpen}
       position="end"
       modalType="non-modal"
       style={{ width: "360px" }}
-      onOpenChange={(_, { open }) => setIsOpen(open)}>
+      onOpenChange={(_, { open }) => setIsSettingsOpen(open)}>
       <DrawerHeader className={styles.settingsHeader}>
         <DrawerHeaderTitle
           className={styles.settingsHeaderTitle}
@@ -165,7 +154,7 @@ const SettingsPanel = React.forwardRef<SettingsPanelHandle>((_, ref) => {
                 aria-label="Close"
                 appearance="subtle"
                 icon={<DismissRegular/>}
-                onClick={() => setIsOpen(false)}/>
+                onClick={() => setIsSettingsOpen(false)}/>
             </Tooltip>
           }>
           Settings
@@ -243,7 +232,7 @@ const SettingsPanel = React.forwardRef<SettingsPanelHandle>((_, ref) => {
             <Button
               id={galleryId}
               appearance="primary"
-              onClick={() => setIsOpen(false)}>
+              onClick={() => setIsSettingsOpen(false)}>
               Open
             </Button>
           </SettingsItem>
@@ -291,6 +280,6 @@ const SettingsPanel = React.forwardRef<SettingsPanelHandle>((_, ref) => {
       </DrawerBody>
     </OverlayDrawer>
   );
-});
+};
 
 export default SettingsPanel;
