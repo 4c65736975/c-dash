@@ -127,6 +127,7 @@ const SettingsPanel = () => {
   const styles = useStyles();
   const { settings, updateSetting, isSettingsOpen, setIsSettingsOpen } = useSettings();
 
+  // Labels id
   const themeId = useId(settings.theme.id);
   const tempId = useId(settings.tempUnit.id);
   const windId = useId(settings.windUnit.id);
