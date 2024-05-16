@@ -28,7 +28,7 @@ import {
   useId
 } from "@fluentui/react-components";
 import { DismissRegular } from "@fluentui/react-icons";
-import useSettings from "../hooks/useSettings";
+import { useSettings } from "../hooks";
 import {
   PrecipitationSetting,
   SpacingSetting,
@@ -126,7 +126,6 @@ const SettingsItem: React.FC<ISettingsItemProps> = ({ children }) => {
 const SettingsPanel = () => {
   const styles = useStyles();
   const { settings, updateSetting, isSettingsOpen, setIsSettingsOpen } = useSettings();
-
   // Labels id
   const themeId = useId(settings.theme.id);
   const tempId = useId(settings.tempUnit.id);
