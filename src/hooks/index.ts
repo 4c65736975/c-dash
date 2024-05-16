@@ -8,3 +8,4 @@
  */
 
 export { default as useSettings } from "./useSettings";
+export { default as useWidgets } from "./useWidgets";
