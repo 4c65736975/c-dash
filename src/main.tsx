@@ -9,11 +9,18 @@
 
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.tsx";
+
 import "./index.css";
+import App from "./App.tsx";
+import SettingsProvider from "./providers/Settings.provider.tsx";
+import FluentProvider from "./providers/Fluent.provider.tsx";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
-  <React.StrictMode>
-    <App/>
-  </React.StrictMode>
+  <SettingsProvider>
+    <FluentProvider>
+      <React.StrictMode>
+        <App/>
+      </React.StrictMode>
+    </FluentProvider>
+  </SettingsProvider>
 );
