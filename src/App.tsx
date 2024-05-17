@@ -7,33 +7,44 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
+import {
+  Button,
+  Tooltip,
+  makeStyles,
+  tokens,
+} from "@fluentui/react-components";
+import { SettingsRegular } from "@fluentui/react-icons";
+import { useSettings } from "./hooks";
+import WidgetsProvider from "./providers/Widgets.provider";
+
+const useStyles = makeStyles({
+  main: {
+    height: "100vh",
+    padding: "50px",
+  },
+  settingsButton: {
+    position: "absolute",
+    top: tokens.spacingVerticalXXL,
+    right: `calc(${tokens.spacingHorizontalXXL} - ${tokens.spacingHorizontalS})`,
+  }
+});
 
 function App() {
-  const [count, setCount] = useState(0);
+  const styles = useStyles();
+  const { setIsSettingsOpen } = useSettings();
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>count is {count}</button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">Click on the Vite and React logos to learn more</p>
-    </>
+    <div className={styles.main}>
+      <Tooltip content="Open settings" relationship="label">
+        <Button
+          size="medium"
+          appearance="subtle"
+          className={styles.settingsButton}
+          icon={<SettingsRegular/>}
+          onClick={() => setIsSettingsOpen(true)}/>
+      </Tooltip>
+      <WidgetsProvider/>
+    </div>
   );
 }
 
