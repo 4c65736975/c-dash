@@ -14,12 +14,14 @@ import "./index.css";
 import App from "./App.tsx";
 import SettingsProvider from "./providers/Settings.provider.tsx";
 import FluentProvider from "./providers/Fluent.provider.tsx";
+import SettingsPanel from "./components/SettingsPanel.tsx"; // TODO: Move SettingsPanel inside provider
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <SettingsProvider>
     <FluentProvider>
       <React.StrictMode>
         <App/>
+        <SettingsPanel/> 
       </React.StrictMode>
     </FluentProvider>
   </SettingsProvider>
