@@ -8,6 +8,7 @@
  */
 
 import React from "react";
+
 import {
   FluentProvider,
   FluentProviderProps,
@@ -16,6 +17,7 @@ import {
   webDarkTheme,
   webLightTheme
 } from "@fluentui/react-components";
+
 import { useSettings } from "../hooks";
 
 const useStyles = makeStyles({
