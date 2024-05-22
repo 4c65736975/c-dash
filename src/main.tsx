@@ -12,17 +12,18 @@ import ReactDOM from "react-dom/client";
 
 import "./index.css";
 import App from "./App.tsx";
+import OverlaysProvider from "./providers/Overlays.provider.tsx";
 import SettingsProvider from "./providers/Settings.provider.tsx";
 import FluentProvider from "./providers/Fluent.provider.tsx";
-import SettingsPanel from "./components/SettingsPanel.tsx"; // TODO: Move SettingsPanel inside provider
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
-  <SettingsProvider>
-    <FluentProvider>
-      <React.StrictMode>
-        <App/>
-        <SettingsPanel/> 
-      </React.StrictMode>
-    </FluentProvider>
-  </SettingsProvider>
+  <React.StrictMode>
+    <OverlaysProvider>
+      <SettingsProvider>
+        <FluentProvider>
+          <App/>
+        </FluentProvider>
+      </SettingsProvider>
+    </OverlaysProvider>
+  </React.StrictMode>
 );
