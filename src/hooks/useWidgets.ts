@@ -8,9 +8,9 @@
  */
 
 import React from "react";
-import WidgetsContext, { TWidgetsContext } from "../contexts/Widgets.context";
+import WidgetsContext, { IWidgetsContext } from "../contexts/Widgets.context";
 
-const useWidgets = (): TWidgetsContext => {
+const useWidgets = (): IWidgetsContext => {
   const context = React.useContext(WidgetsContext);
 
   if (!context) {
