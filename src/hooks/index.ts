@@ -7,5 +7,6 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+export { default as useOverlays } from "./useOverlays";
 export { default as useSettings } from "./useSettings";
 export { default as useWidgets } from "./useWidgets";
