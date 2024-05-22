@@ -8,6 +8,7 @@
  */
 
 import React from "react";
+
 import OverlaysContext, { IOverlaysContext } from "../contexts/Overlays.context";
 
 const useOverlays = (): IOverlaysContext => {

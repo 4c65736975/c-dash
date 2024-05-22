@@ -8,6 +8,7 @@
  */
 
 import React from "react";
+
 import WidgetsContext, { IWidgetsContext } from "../contexts/Widgets.context";
 
 const useWidgets = (): IWidgetsContext => {
