@@ -30,6 +30,7 @@ import {
 } from "@fluentui/react-components";
 import { DismissRegular } from "@fluentui/react-icons";
 
+import FluentProvider from "./Fluent.provider";
 import SettingsContext from "../contexts/Settings.context";
 import {
   SETTING_ID_TO_NAME,
@@ -313,8 +314,10 @@ const SettingsProvider: React.FC<ISettingsProviderProps> = ({ children }) => {
       settings: settings,
       updateSetting: updateSetting
     }}>
-      {children}
-      <SettingsOverlay/>
+      <FluentProvider>
+        {children}
+        <SettingsOverlay/>
+      </FluentProvider>
     </SettingsContext.Provider>
   );
 };

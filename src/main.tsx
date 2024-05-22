@@ -14,15 +14,12 @@ import "./index.css";
 import App from "./App.tsx";
 import OverlaysProvider from "./providers/Overlays.provider.tsx";
 import SettingsProvider from "./providers/Settings.provider.tsx";
-import FluentProvider from "./providers/Fluent.provider.tsx";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <OverlaysProvider>
       <SettingsProvider>
-        <FluentProvider>
-          <App/>
-        </FluentProvider>
+        <App/>
       </SettingsProvider>
     </OverlaysProvider>
   </React.StrictMode>
