@@ -8,16 +8,15 @@
  */
 
 import React from "react";
+
 import { Settings } from "../types/Settings.type";
 
-export type TSettingsContext = {
+export type ISettingsContext = {
   settings: Settings;
-  isSettingsOpen: boolean;
-  setIsSettingsOpen: (state: boolean) => void;
   updateSetting: (id: string, value: Settings[keyof Settings]["value"]) => void;
 };
 
-const SettingsContext = React.createContext<TSettingsContext | null>(null);
+const SettingsContext = React.createContext<ISettingsContext | null>(null);
 
 SettingsContext.displayName = "Settings";
 
