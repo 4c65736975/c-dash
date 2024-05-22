@@ -8,9 +8,10 @@
  */
 
 import React from "react";
-import SettingsContext, { TSettingsContext } from "../contexts/Settings.context";
 
-const useSettings = (): TSettingsContext => {
+import SettingsContext, { ISettingsContext } from "../contexts/Settings.context";
+
+const useSettings = (): ISettingsContext => {
   const context = React.useContext(SettingsContext);
 
   if (!context) {
