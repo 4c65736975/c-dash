@@ -14,13 +14,16 @@ import {
   tokens,
 } from "@fluentui/react-components";
 import { SettingsRegular } from "@fluentui/react-icons";
-import { useSettings } from "./hooks";
-import WidgetsProvider from "./providers/Widgets.provider";
+import { DndContext } from "@dnd-kit/core";
+
+import WidgetsProvider from "./providers/Widgets.provider.tsx";
+import { useOverlays } from "./hooks";
 
 const useStyles = makeStyles({
   main: {
     height: "100vh",
     padding: "50px",
+    boxSizing: "border-box"
   },
   settingsButton: {
     position: "absolute",
@@ -31,7 +34,7 @@ const useStyles = makeStyles({
 
 function App() {
   const styles = useStyles();
-  const { setIsSettingsOpen } = useSettings();
+  const { setIsSettingsOpen } = useOverlays();
 
   return (
     <div className={styles.main}>
@@ -43,7 +46,9 @@ function App() {
           icon={<SettingsRegular/>}
           onClick={() => setIsSettingsOpen(true)}/>
       </Tooltip>
-      <WidgetsProvider/>
+      <DndContext>
+        <WidgetsProvider/>
+      </DndContext>
     </div>
   );
 }
