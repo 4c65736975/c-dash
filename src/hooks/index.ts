@@ -7,6 +7,8 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+export { default as useFetch } from "./useFetch";
+export { default as useLocalStorage } from "./useLocalStorage";
 export { default as useOverlays } from "./useOverlays";
 export { default as useSettings } from "./useSettings";
 export { default as useWidgets } from "./useWidgets";
