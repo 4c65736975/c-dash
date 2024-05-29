@@ -42,8 +42,7 @@ const useFetch = <T>(url: string): IUseFetchResponse<T> => {
     };
 
     fetchData();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [data]);
+  }, [url]);
 
   return {
     data,
