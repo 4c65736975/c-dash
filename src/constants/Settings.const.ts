@@ -1,5 +1,5 @@
 /**
- * Settings.const.tsx
+ * Settings.const.ts
  *
  * Copyright (c) 2024 Damian Leśniewski. All Rights Reserved.
  *
@@ -18,16 +18,16 @@ const SETTING_ID_TO_NAME: { [key: string]: string } = {
   "kmh": "km/h",
   "ms": "m/s",
   "mph": "mph",
-  "knots": "knots",
-  "millimeter": "millimeter",
+  "kn": "knots",
+  "mm": "millimeter",
   "inch": "inch"
 };
 
 const SETTING_OPTIONS: { [key: string]: string[] } = {
   THEME: ["light", "dark", "system"],
   TEMP: ["celsius", "fahrenheit"],
-  WIND_SPEED: ["kmh", "ms", "mph", "knots"],
-  PRECIPITATION: ["millimeter", "inch"]
+  WIND_SPEED: ["kmh", "ms", "mph", "kn"],
+  PRECIPITATION: ["mm", "inch"]
 };
 
 const DEFAULT_SETTINGS: Settings = {
@@ -45,7 +45,7 @@ const DEFAULT_SETTINGS: Settings = {
   },
   precipitationUnit: {
     id: "precipitation-unit-setting",
-    value: "millimeter"
+    value: "mm"
   },
   alignment: {
     id: "alignment-setting",

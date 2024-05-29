@@ -1,5 +1,5 @@
 /**
- * SettingsContext.tsx
+ * SettingsContext.ts
  *
  * Copyright (c) 2024 Damian Leśniewski. All Rights Reserved.
  *
