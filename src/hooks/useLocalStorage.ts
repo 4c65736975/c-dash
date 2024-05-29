@@ -10,7 +10,7 @@
 interface IUseLocalStorage {
   add: <T>(key: string, data: T) => boolean;
   set: <T>(key: string, data: T) => void;
-  get: <T>(key: string, defaultValue: T) => T | null;
+  get: <T>(key: string, defaultValue?: T) => T | null;
   has: (key: string) => boolean;
   remove: (key: string) => void;
 }
@@ -29,14 +29,14 @@ const useLocalStorage = (): IUseLocalStorage => {
     localStorage.setItem(key, JSON.stringify(data));
   };
 
-  const get = <T>(key: string, defaultValue: T): T | null => {
+  const get = <T>(key: string, defaultValue?: T): T | null => {
     const data = localStorage.getItem(key);
 
     if (data) {
       return JSON.parse(data); 
     }
 
-    return defaultValue;
+    return defaultValue || null;
   };
 
   const has = (key: string): boolean => {
