@@ -9,6 +9,7 @@
 
 import {
   Divider,
+  Subtitle1,
   makeStyles,
   tokens
 } from "@fluentui/react-components";
@@ -29,8 +30,50 @@ const useStyles = makeStyles({
     "::after": {
       marginRight: `calc(${tokens.spacingHorizontalL} * -1)`
     }
+  },
+  widgetHeader: {
+    width: "max-content",
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center"
+  },
+  widgetTitle: {
+    display: "flex",
+    alignItems: "center",
+    gap: tokens.spacingHorizontalM,
+    fontSize: tokens.fontSizeHero800
   }
 });
+
+interface IWidgetHeaderProps {
+  children: React.ReactNode;
+}
+
+export const WidgetHeader: React.FC<IWidgetHeaderProps> = ({ children }) => {
+  const styles = useStyles();
+
+  return (
+    <div className={styles.widgetHeader}>
+      {children}
+    </div>
+  );
+};
+
+interface IWidgetTitleProps {
+  icon: React.ReactNode;
+  children: React.ReactNode;
+}
+
+export const WidgetTitle: React.FC<IWidgetTitleProps> = ({ icon, children }) => {
+  const styles = useStyles();
+
+  return (
+    <div className={styles.widgetTitle}>
+      {icon}
+      {typeof(children) === "string" ? <Subtitle1>{children}</Subtitle1> : children}
+    </div>
+  );
+};
 
 export const WidgetDivider: React.FC = () => {
   const styles = useStyles();
@@ -41,13 +84,14 @@ export const WidgetDivider: React.FC = () => {
 interface IWidgetProps {
   header?: React.ReactNode;
   children: React.ReactNode;
+  minWidth?: number;
 }
 
-const Widget: React.FC<IWidgetProps> = ({ header, children }) => {
+const Widget: React.FC<IWidgetProps> = ({ header, children, minWidth }) => {
   const styles = useStyles();
 
   return (
-    <div className={styles.widgetContainer}>
+    <div style={{ minWidth: minWidth }} className={styles.widgetContainer}>
       {header}
       {children}
     </div>
