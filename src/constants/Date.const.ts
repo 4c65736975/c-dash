@@ -7,7 +7,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-const WEEK_DAY_TO_ABBREVIATE_NAME: string[] = [
+const WEEK_DAY_ABBREVIATE_NAME: string[] = [
   "Sun",
   "Mon",
   "Tue",
@@ -17,7 +17,7 @@ const WEEK_DAY_TO_ABBREVIATE_NAME: string[] = [
   "Sat"
 ];
 
-const WEEK_DAY_TO_NAME: string[] = [
+const WEEK_DAY_NAME: string[] = [
   "Sunday",
   "Monday",
   "Tuesday",
@@ -27,7 +27,7 @@ const WEEK_DAY_TO_NAME: string[] = [
   "Saturday"
 ];
 
-const MONTH_TO_NAME: string[] = [
+const MONTH_NAME: string[] = [
   "January",
   "February",
   "March",
@@ -43,7 +43,7 @@ const MONTH_TO_NAME: string[] = [
 ];
 
 export {
-  WEEK_DAY_TO_ABBREVIATE_NAME,
-  WEEK_DAY_TO_NAME,
-  MONTH_TO_NAME
+  WEEK_DAY_ABBREVIATE_NAME,
+  WEEK_DAY_NAME,
+  MONTH_NAME
 };
