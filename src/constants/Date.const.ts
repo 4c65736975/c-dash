@@ -17,6 +17,16 @@ const WEEK_DAY_TO_ABBREVIATE_NAME: string[] = [
   "Sat"
 ];
 
+const WEEK_DAY_TO_NAME: string[] = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday"
+];
+
 const MONTH_TO_NAME: string[] = [
   "January",
   "February",
@@ -34,5 +44,6 @@ const MONTH_TO_NAME: string[] = [
 
 export {
   WEEK_DAY_TO_ABBREVIATE_NAME,
+  WEEK_DAY_TO_NAME,
   MONTH_TO_NAME
 };
