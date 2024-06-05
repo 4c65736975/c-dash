@@ -9,10 +9,13 @@
 
 import { FluentIcon } from "@fluentui/react-icons";
 
-export type TWeatherIcons = { [key: number]: FluentIcon };
-export type TWeatherNames = { [key: number]: string };
+export type TWeatherIcons = {
+  [key: number]: FluentIcon
+};
+export type TWeatherNames = {
+  [key: number]: string
+};
 
-// Weather API
 export interface IWeatherCurrentUnits {
   cloud_cover: string;
   interval: string;
